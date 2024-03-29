@@ -189,7 +189,7 @@ def get_model_answers(
     )
     tokenizer = transformers.AutoTokenizer.from_pretrained(
                 model_path,
-                use_fast=True,
+                use_fast=False,
                 trust_remote_code=True,
             )
 
