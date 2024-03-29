@@ -189,6 +189,7 @@ def preprocess(
         prompts,
         return_tensors="pt",
         truncation=True,
+        padding="max_length",
         return_offsets_mapping=True,
     )
     # Set everything to be ignored, except the assistant part
@@ -362,6 +363,7 @@ def train():
         model_args.model_name_or_path,
         cache_dir=training_args.cache_dir,
         model_max_length=training_args.model_max_length,
+        padding_side="right",
         trust_remote_code=True, 
         use_fast=True,
     )
