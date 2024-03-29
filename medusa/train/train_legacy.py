@@ -341,6 +341,7 @@ def train():
         config=config,
         cache_dir=training_args.cache_dir,
         torch_dtype=torch.bfloat16,
+        trust_remote_code=True
     )
 
     # Freeze the base model
@@ -363,6 +364,7 @@ def train():
         cache_dir=training_args.cache_dir,
         model_max_length=training_args.model_max_length,
         padding_side="right",
+        trust_remote_code=True,
         use_fast=False,
     )
     tokenizer.pad_token = tokenizer.unk_token

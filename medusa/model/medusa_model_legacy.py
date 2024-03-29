@@ -95,7 +95,10 @@ class MedusaModel(nn.Module):
         self.medusa = medusa_num_heads
         self.medusa_num_layers = medusa_num_layers
         self.base_model_name_or_path = base_model_name_or_path
-        self.tokenizer = AutoTokenizer.from_pretrained(self.base_model_name_or_path)
+        self.tokenizer = AutoTokenizer.from_pretrained(self.base_model_name_or_path,
+                                                        trust_remote_code=True,
+                                                        use_fast=False
+                                                    )
         # Create a list of Medusa heads
         self.medusa_head = nn.ModuleList(
             [

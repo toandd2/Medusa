@@ -185,7 +185,7 @@ def get_model_answers(
     # Medusa model setup
     num_heads = 4
     model = transformers.AutoModelForCausalLM.from_pretrained(
-        model_path, low_cpu_mem_usage=True, torch_dtype=torch.float16, device_map="auto"
+        model_path, low_cpu_mem_usage=True, torch_dtype=torch.float16, device_map="auto", trust_remote_code=True
     )
     tokenizer = transformers.AutoTokenizer.from_pretrained(
                 model_path,
