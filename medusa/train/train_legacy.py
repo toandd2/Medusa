@@ -363,7 +363,7 @@ def train():
         cache_dir=training_args.cache_dir,
         model_max_length=training_args.model_max_length,
         trust_remote_code=True, 
-        use_fast=False,
+        use_fast=True,
     )
     tokenizer.pad_token = tokenizer.unk_token
 
