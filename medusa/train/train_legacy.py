@@ -188,7 +188,6 @@ def preprocess(
     encoding = tokenizer(
         prompts,
         return_tensors="pt",
-        padding="max_length",
         truncation=True,
         return_offsets_mapping=True,
     )
@@ -363,8 +362,7 @@ def train():
         model_args.model_name_or_path,
         cache_dir=training_args.cache_dir,
         model_max_length=training_args.model_max_length,
-        padding_side="right",
-        trust_remote_code=True,
+        trust_remote_code=True, 
         use_fast=False,
     )
     tokenizer.pad_token = tokenizer.unk_token
